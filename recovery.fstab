@@ -11,8 +11,10 @@
 /system_image  emmc   /dev/block/bootdevice/by-name/system                    flags=display="System image";backup=0
 /vendor_image  emmc   /dev/block/bootdevice/by-name/vendor                    flags=display="Vendor image";backup=0
 /data          ext4   /dev/block/bootdevice/by-name/userdata                  flags=fileencryption=ice:aes-256-cts
+/vbmeta        emmc   /dev/block/bootdevice/by-name/vbmeta                    flags=display="vbmeta";backup=1;flashimg=1
 /firmware      vfat   /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";mounttodecrypt
-/cust          ext4   /dev/block/bootdevice/by-name/cust                      flags=display="Cust";backup=1
+/cust          ext4   /dev/block/bootdevice/by-name/cust                      flags=display="Cust";backup=1;wipeingui
+/cust_image    emmc   /dev/block/bootdevice/by-name/cust                      flags=display="Cust Image";flashimg=1;backup=0
 /misc          emmc   /dev/block/bootdevice/by-name/misc                      flags=display="Misc";backup=1
 /modem         emmc   /dev/block/bootdevice/by-name/modem                     flags=backup=1;display="Modem"
 /bluetooth     emmc   /dev/block/bootdevice/by-name/bluetooth                 flags=backup=1;subpartitionof=/modem
